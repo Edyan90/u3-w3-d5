@@ -9,7 +9,7 @@ const Song = ({ track }) => {
   const isFav = favourites.includes(track);
   return (
     <Col key={track.id} className="col text-center">
-      <img className="img-fluid" src={track.album.cover_medium} alt="track" />
+      <img className="img-fluid cursor-point" src={track.album.cover_medium} alt="track" onClick={() => {}} />
       <p>
         Track: {track.title}
         <br />
