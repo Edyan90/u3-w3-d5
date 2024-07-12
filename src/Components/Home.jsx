@@ -4,12 +4,14 @@ import MainSection from "./MainSection";
 import Player from "./Player";
 
 const Home = () => {
-  <Container fluid>
-    <Row>
-      <SideBar />
-      <MainSection />
-    </Row>
-    <Player />
-  </Container>;
+  return (
+    <Container fluid id="reactbody">
+      <Row>
+        <SideBar />
+        {/*  <MainSection /> */}
+      </Row>
+      {/*  <Player /> */}
+    </Container>
+  );
 };
 export default Home;
