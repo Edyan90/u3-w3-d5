@@ -3,7 +3,7 @@ import logo from "../assets/logo/logo.png";
 const SideBar = () => {
   return (
     <Col className="col-2">
-      <Navbar expand="md" className="fixed-left justify-content-between" id="sidebar">
+      <Navbar expand="md" className="fixed-left justify-content-between" style={{ height: "95vh" }} id="sidebar">
         <Container fluid className="flex-column align-items-start">
           <Navbar.Brand href="index.html">
             <img src={logo} alt="Spotify Logo" width="131" height="40" />

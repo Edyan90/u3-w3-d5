@@ -1,15 +1,21 @@
 import { Col } from "react-bootstrap";
 import { Heart, HeartFill } from "react-bootstrap-icons";
 import { useDispatch, useSelector } from "react-redux";
-import { addToFavourite, removeFromFavourite } from "../actions/actions";
+import { addToFavourite, addToPlayer, removeFromFavourite } from "../actions/actions";
 
 const Song = ({ track }) => {
   const dispatch = useDispatch();
   const favourites = useSelector((state) => state.favourites.list);
   const isFav = favourites.includes(track);
+
   return (
     <Col key={track.id} className="col text-center">
-      <img className="img-fluid cursor-point" src={track.album.cover_medium} alt="track" onClick={() => {}} />
+      <img
+        className="img-fluid cursor-point"
+        src={track.album.cover_medium}
+        alt="track"
+        onClick={() => dispatch(addToPlayer(track))} // Chiamata corretta all'azione addToPlayer
+      />
       <p>
         Track: {track.title}
         <br />

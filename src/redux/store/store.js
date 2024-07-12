@@ -6,7 +6,7 @@ import playerState from "../reducers/playerState";
 const rootReducer = combineReducers({
   favourites: favourites,
   fetchmusic: fetchMusic,
-  player: playerState,
+  playerState: playerState,
 });
 const store = configureStore({
   reducer: rootReducer,
