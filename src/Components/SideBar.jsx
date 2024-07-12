@@ -1,6 +1,17 @@
 import { Button, Col, Collapse, Container, Form, FormControl, InputGroup, Nav, Navbar } from "react-bootstrap";
 import logo from "../assets/logo/logo.png";
+import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { getRicercaAction } from "../actions/ricercaAction";
+
 const SideBar = () => {
+  const [search, setSearch] = useState("");
+  const dispatch = useDispatch();
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    dispatch(getRicercaAction(search));
+  };
   return (
     <Col className="col-2">
       <Navbar expand="md" className="fixed-left justify-content-between" style={{ height: "95vh" }} id="sidebar">
@@ -18,9 +29,22 @@ const SideBar = () => {
                 <Nav.Link href="#" className="d-flex align-items-center">
                   <i className="bi bi-book-fill"></i>&nbsp; Your Library
                 </Nav.Link>
-                <Form className="mt-3">
+                <Form
+                  className="mt-3"
+                  onSubmit={() => {
+                    handleSubmit();
+                  }}
+                >
                   <InputGroup>
-                    <FormControl type="text" placeholder="Search" aria-label="Search" />
+                    <FormControl
+                      type="text"
+                      placeholder="Search"
+                      aria-label="Search"
+                      value={search}
+                      onChange={(e) => {
+                        setSearch(e.target.value);
+                      }}
+                    />
                     <div className="input-group mt-3">
                       <Button variant="outline-secondary" size="sm">
                         GO
