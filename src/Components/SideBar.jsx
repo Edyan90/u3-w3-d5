@@ -3,13 +3,13 @@ import logo from "../assets/logo/logo.png";
 const SideBar = () => {
   return (
     <Col className="col-2">
-      <Navbar bg="light" expand="md" className="fixed-left justify-content-between" id="sidebar">
+      <Navbar expand="md" className="fixed-left justify-content-between" id="sidebar">
         <Container fluid className="flex-column align-items-start">
           <Navbar.Brand href="index.html">
             <img src={logo} alt="Spotify Logo" width="131" height="40" />
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="navbarNavAltMarkup" /* onClick={() => setOpen(!open)} */ />
-          <Collapse in={open}>
+          <Collapse>
             <Navbar.Collapse id="navbarNavAltMarkup">
               <Nav className="flex-column">
                 <Nav.Link href="#" className="d-flex align-items-center">
